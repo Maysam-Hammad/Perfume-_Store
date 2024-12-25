@@ -269,35 +269,38 @@
             background-color: #9f5e0e;
         }
 
-        /* جعل التصميم يستجيب بشكل أفضل على الشاشات الصغيرة */
+        /* إعدادات الاستجابة */
         @media (max-width: 768px) {
             .featured .swiper {
-                padding: 10px;
+                padding: 20px;
+                /* ضمان أن الـ div لا يتقلص */
             }
 
             .featured .swiper-slide {
-                width: 100%;
+                width: 33.33%;
+                /* عرض 3 صور بشكل متساوٍ */
+                padding: 0 10px;
+                /* إضافة مسافة حول الصور */
             }
 
             .featured .perfume {
-                max-width: 200px;
-                /* تقليل حجم البطاقات */
+                max-width: 100%;
+                /* تأكد من أن الصور تملأ المساحة المتاحة */
+                padding: 10px;
             }
         }
 
         @media (max-width: 480px) {
-            header {
-                padding: 10px;
+
+            /* في الشاشات الصغيرة، سيظل التصميم مرتبًا */
+            .featured .swiper-slide {
+                width: 33.33%;
+                /* عرض 3 صور متساوية */
             }
 
-            .hero-video .hero-content h1 {
-                font-size: 2rem;
-                /* تقليل حجم الخط */
-            }
-
-            .hero-video .hero-content p {
-                font-size: 1rem;
-                /* تقليل حجم النص */
+            .featured .perfume {
+                max-width: 100%;
+                /* تأكد من أن الصور تملأ الـ div بشكل مناسب */
             }
 
             .swiper-button-next,
@@ -483,17 +486,18 @@
             loop: true,
             autoplay: false,
             breakpoints: {
-                // عند الشاشات الصغيرة (عرض أقل من 768px)، يتم عرض 3 صور
+                // عند الشاشات الصغيرة (عرض أقل من 768px)، سيتم عرض 3 صور
                 768: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
+                    spaceBetween: 15, // تقليل المسافة بين الصور قليلاً
                 },
-                // عند الشاشات الكبيرة، يتم عرض 5 صور
+                // عند الشاشات الكبيرة، سيتم عرض 5 صور
                 1024: {
-                    slidesPerView: 5
+                    slidesPerView: 5,
+                    spaceBetween: 20, // المسافة بين الصور على الشاشات الكبيرة
                 }
             }
         });
-
 
         let slideInterval;
 
