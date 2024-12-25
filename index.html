@@ -270,43 +270,92 @@
         }
 
         /* إعدادات الاستجابة */
-        @media (max-width: 768px) {
-            .featured .swiper {
-                padding: 20px;
-                /* ضمان أن الـ div لا يتقلص */
-            }
+        /* تعيين ارتفاع ثابت مع تصميم متجاوب */
+        .featured .swiper {
+            width: 100%;
+            height: 60vh;
+            /* نسبة من ارتفاع الشاشة */
+        }
 
+        /* التأكد من أن الصور تتمدد بالشكل الصحيح */
+        .featured .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            /* مسافات بسيطة حول الصور */
+        }
+
+        .featured .perfume img {
+            width: 100%;
+            /* تجعل الصورة تمتد لتملأ الـ div */
+            height: auto;
+            object-fit: cover;
+            /* تأكد من أن الصورة تبقى بنفس النسبة */
+            border-radius: 10px;
+        }
+
+        /* جعل الصور أكثر تناسبًا في الهواتف */
+        @media (max-width: 768px) {
             .featured .swiper-slide {
                 width: 33.33%;
-                /* عرض 3 صور بشكل متساوٍ */
-                padding: 0 10px;
-                /* إضافة مسافة حول الصور */
+                /* عرض 3 صور في الصف */
             }
 
-            .featured .perfume {
-                max-width: 100%;
-                /* تأكد من أن الصور تملأ المساحة المتاحة */
-                padding: 10px;
+            .featured .swiper {
+                height: 50vh;
+                /* تقليل ارتفاع الـ div على الشاشات الصغيرة */
+            }
+
+            .featured .perfume img {
+                object-fit: cover;
+            }
+        }
+
+        /* جعل النصوص أكثر تناسبًا في الأجهزة الصغيرة */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                /* تحويل القائمة الأفقية إلى رأسية */
+                gap: 10px;
+            }
+
+            header nav ul li a {
+                font-size: 14px;
+                /* تصغير حجم الخط */
+            }
+
+            .hero-video .hero-content h1 {
+                font-size: 2rem;
+                /* تصغير العنوان */
+            }
+
+            .hero-video .hero-content p {
+                font-size: 1rem;
+                /* تصغير النص */
+            }
+
+            .ShowMore {
+                font-size: 14px;
+                /* تصغير زر "التسوق الآن" */
+                padding: 12px 25px;
             }
         }
 
         @media (max-width: 480px) {
-
-            /* في الشاشات الصغيرة، سيظل التصميم مرتبًا */
             .featured .swiper-slide {
-                width: 33.33%;
-                /* عرض 3 صور متساوية */
+                width: 100%;
+                /* عرض صورة واحدة في كل صف على الشاشات الصغيرة جدًا */
             }
 
-            .featured .perfume {
-                max-width: 100%;
-                /* تأكد من أن الصور تملأ الـ div بشكل مناسب */
+            .hero-video .hero-content h1 {
+                font-size: 1.5rem;
+                /* تصغير العنوان أكثر */
             }
 
-            .swiper-button-next,
-            .swiper-button-prev {
-                font-size: 18px;
-                /* تقليل حجم الأسهم */
+            .hero-video .hero-content p {
+                font-size: 0.9rem;
+                /* تصغير النص أكثر */
             }
         }
     </style>
