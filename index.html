@@ -105,9 +105,7 @@
 
         .featured .perfume:hover {
             transform: translateY(-10px);
-            /* تحريك العنصر للأعلى قليلاً */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            /* إضافة ظل خفيف لجعل العنصر يبرز أكثر */
         }
 
         .featured .perfume p {
@@ -138,7 +136,6 @@
             background-color: #9f5e0e;
         }
 
-        /* تغيير لون السهم */
         .swiper-button-next,
         .swiper-button-prev {
             color: #5c3403;
@@ -291,12 +288,10 @@
 
             .featured .swiper-slide {
                 max-width: 150px;
-                /* تقليل حجم المنتجات */
             }
 
             .hero-video h1 {
                 font-size: 2rem;
-                /* تقليل حجم النص */
             }
 
             .hero-video p {
@@ -310,7 +305,6 @@
             footer .social-icons img {
                 width: 15px;
                 height: 15px;
-                /* تصغير أيقونات الشبكات الاجتماعية */
             }
         }
 
@@ -499,14 +493,14 @@
             this.style.display = "none";
         });
         const swiper = new Swiper('.swiper', {
-            slidesPerView: 1, // عدد الشرائح الافتراضي
+            slidesPerView: 1,
             spaceBetween: 20,
             breakpoints: {
                 768: {
-                    slidesPerView: 2, // عدد الشرائح للأجهزة المتوسطة
+                    slidesPerView: 2,
                 },
                 1024: {
-                    slidesPerView: 5, // عدد الشرائح للأجهزة الكبيرة
+                    slidesPerView: 5,
                 }
             },
             navigation: {
