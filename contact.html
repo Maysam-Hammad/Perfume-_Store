@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Perfume Store</title>
+    <title>Perfume Store</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* CSS code */
         body {
@@ -126,13 +128,18 @@
         }
 
         footer a {
-            color: #dd9f53;
+            color: #9c958d;
             text-decoration: none;
+            font-size: 30px;
+            color: #333;
+            transition: color 0.3s ease;
+            cursor: pointer;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #dd9f53;
         }
+
 
         .success-message {
             position: fixed;
@@ -150,6 +157,37 @@
 
         .success-message.show {
             top: 20px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .featured .swiper-slide {
+                max-width: 150px;
+                /* تقليل حجم المنتجات */
+            }
+
+            .hero-video h1 {
+                font-size: 2rem;
+                /* تقليل حجم النص */
+            }
+
+            .hero-video p {
+                font-size: 1rem;
+            }
+
+            .swiper-wrapper {
+                flex-wrap: nowrap;
+            }
+
+            footer .social-icons img {
+                width: 15px;
+                height: 15px;
+                /* تصغير أيقونات الشبكات الاجتماعية */
+            }
         }
     </style>
 </head>
@@ -202,7 +240,13 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Perfume Store.<br> Follow us on <br> <a href="#">Facebook</a>, <a href="#">Instagram</a>.</p>
+        <p>&copy; 2024 Perfume Store.
+            <br> All Rights Reserved.
+        </p>
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-instagram"></a>
+        </div>
     </footer>
 
     <div id="success-message" class="success-message">Your message has been sent successfully!</div>
