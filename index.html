@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Perfume Store</title>
     <style>
         /* General Styling */
@@ -94,7 +96,9 @@
 
         .featured .perfume:hover {
             transform: translateY(-10px);
+            /* تحريك العنصر للأعلى قليلاً */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            /* إضافة ظل خفيف لجعل العنصر يبرز أكثر */
         }
 
         .featured .perfume p {
@@ -125,6 +129,7 @@
             background-color: #9f5e0e;
         }
 
+        /* تغيير لون السهم */
         .swiper-button-next,
         .swiper-button-prev {
             color: #5c3403;
@@ -267,96 +272,6 @@
 
         .ShowMore:hover {
             background-color: #9f5e0e;
-        }
-
-        /* إعدادات الاستجابة */
-        /* تعيين ارتفاع ثابت مع تصميم متجاوب */
-        .featured .swiper {
-            width: 100%;
-            height: 60vh;
-            /* نسبة من ارتفاع الشاشة */
-        }
-
-        /* التأكد من أن الصور تتمدد بالشكل الصحيح */
-        .featured .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            /* مسافات بسيطة حول الصور */
-        }
-
-        .featured .perfume img {
-            width: 100%;
-            /* تجعل الصورة تمتد لتملأ الـ div */
-            height: auto;
-            object-fit: cover;
-            /* تأكد من أن الصورة تبقى بنفس النسبة */
-            border-radius: 10px;
-        }
-
-        /* جعل الصور أكثر تناسبًا في الهواتف */
-        @media (max-width: 768px) {
-            .featured .swiper-slide {
-                width: 33.33%;
-                /* عرض 3 صور في الصف */
-            }
-
-            .featured .swiper {
-                height: 50vh;
-                /* تقليل ارتفاع الـ div على الشاشات الصغيرة */
-            }
-
-            .featured .perfume img {
-                object-fit: cover;
-            }
-        }
-
-        /* جعل النصوص أكثر تناسبًا في الأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            header nav ul {
-                flex-direction: column;
-                /* تحويل القائمة الأفقية إلى رأسية */
-                gap: 10px;
-            }
-
-            header nav ul li a {
-                font-size: 14px;
-                /* تصغير حجم الخط */
-            }
-
-            .hero-video .hero-content h1 {
-                font-size: 2rem;
-                /* تصغير العنوان */
-            }
-
-            .hero-video .hero-content p {
-                font-size: 1rem;
-                /* تصغير النص */
-            }
-
-            .ShowMore {
-                font-size: 14px;
-                /* تصغير زر "التسوق الآن" */
-                padding: 12px 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .featured .swiper-slide {
-                width: 100%;
-                /* عرض صورة واحدة في كل صف على الشاشات الصغيرة جدًا */
-            }
-
-            .hero-video .hero-content h1 {
-                font-size: 1.5rem;
-                /* تصغير العنوان أكثر */
-            }
-
-            .hero-video .hero-content p {
-                font-size: 0.9rem;
-                /* تصغير النص أكثر */
-            }
         }
     </style>
 </head>
@@ -526,7 +441,7 @@
             this.style.display = "none";
         });
         const swiper = new Swiper('.swiper', {
-            slidesPerView: 5, // الافتراضي 5 صور
+            slidesPerView: 'auto',  // تعديل بحيث يظهر عدد من الشرائح بناءً على العرض
             spaceBetween: 20,
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -535,18 +450,18 @@
             loop: true,
             autoplay: false,
             breakpoints: {
-                // عند الشاشات الصغيرة (عرض أقل من 768px)، سيتم عرض 3 صور
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 15, // تقليل المسافة بين الصور قليلاً
+                640: {
+                    slidesPerView: 1,  // لشاشات الهواتف
                 },
-                // عند الشاشات الكبيرة، سيتم عرض 5 صور
+                768: {
+                    slidesPerView: 2,  // للأجهزة اللوحية
+                },
                 1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 20, // المسافة بين الصور على الشاشات الكبيرة
-                }
+                    slidesPerView: 3,  // لأجهزة الكمبيوتر
+                },
             }
         });
+
 
         let slideInterval;
 
