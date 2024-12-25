@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Perfume Store</title>
     <style>
@@ -441,7 +440,7 @@
             this.style.display = "none";
         });
         const swiper = new Swiper('.swiper', {
-            slidesPerView: 'auto',  // تعديل بحيث يظهر عدد من الشرائح بناءً على العرض
+            slidesPerView: 5,
             spaceBetween: 20,
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -449,19 +448,7 @@
             },
             loop: true,
             autoplay: false,
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,  // لشاشات الهواتف
-                },
-                768: {
-                    slidesPerView: 2,  // للأجهزة اللوحية
-                },
-                1024: {
-                    slidesPerView: 3,  // لأجهزة الكمبيوتر
-                },
-            }
         });
-
 
         let slideInterval;
 
